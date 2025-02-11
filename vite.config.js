@@ -7,6 +7,9 @@ import autoprefixer from 'autoprefixer' // 导入 Autoprefixer 用来添加浏�
 // https://vitejs.dev/config/
 export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? '/DeepTodoList/' : '/',
+  build: {
+    outDir: 'docs'
+  },
   plugins: [
     vue(),
   ],
