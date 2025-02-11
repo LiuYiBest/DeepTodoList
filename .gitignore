@@ -31,7 +31,6 @@ coverage
 !.env.example
 
 # Build files
-dist/
 dist-ssr/
 *.local
 
