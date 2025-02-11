@@ -110,16 +110,6 @@ onMounted(() => {
 <template>
   <div class="min-h-screen p-4 md:p-8 bg-white dark:bg-gray-900 flex items-center justify-center">
     <div class="w-full max-w-3xl mx-auto px-4">
-      <!-- 错误提示 -->
-      <div v-if="error" class="mb-4 p-4 bg-red-100 text-red-700 rounded-lg">
-        {{ error }}
-      </div>
-
-      <!-- 加载提示 -->
-      <div v-if="loading" class="text-center py-8">
-        加载中...
-      </div>
-
       <header class="flex items-center justify-between mb-8">
         <h1 class="text-4xl font-bold bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
           Todo List
@@ -130,12 +120,22 @@ onMounted(() => {
         </button>
       </header>
 
+      <!-- 加载提示 -->
+      <div v-if="loading" class="text-center py-2 text-sm text-gray-500">
+        加载中...
+      </div>
+
       <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
         <todo-input @add="addTodo" class="mb-8" />
 
         <todo-filter v-model="filter" :stats="stats" @filter-change="filter = $event" class="mb-6" />
 
         <todo-list :filtered-todos="filteredTodos" @toggle="toggleTodo" @delete="deleteTodo" />
+      </div>
+
+      <!-- 错误提示 -->
+      <div v-if="error" class="mt-4 p-2 text-sm text-red-600 dark:text-red-400 text-center">
+        {{ error }}
       </div>
     </div>
   </div>
