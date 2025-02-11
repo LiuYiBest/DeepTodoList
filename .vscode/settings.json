@@ -1,0 +1,14 @@
+{
+  "files.associations": {
+    "*.vue": "vue"
+  },
+  "editor.defaultFormatter": "Vue.volar",
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
+  "editor.formatOnSave": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  }
+} 
